@@ -2,8 +2,8 @@ package project;
 
 public class ContactsLinkedList {
 
-	private Node<Contacts> head;
-	private Node<Contacts> current;
+	private Node<Contact> head;
+	private Node<Contact> current;
 	
 	
 	public ContactsLinkedList() {
@@ -12,8 +12,10 @@ public class ContactsLinkedList {
 	}
 	
 	
-	public void insert(Contacts val) {
-		Node<Contacts> tmp = new Node<Contacts>(val);
+	
+	
+	public void insert(Contact val) {
+		Node<Contact> tmp = new Node<Contact>(val);
 
 		//TODO choose between these two ways
 		
@@ -46,8 +48,8 @@ public class ContactsLinkedList {
 		}//end if
 
 		else {
-			Node<Contacts> p = head;
-			Node<Contacts> q = null;
+			Node<Contact> p = head;
+			Node<Contact> q = null;
 
 
 			while((p != null) && (val.compareTo(p.data)>=0) ) {
