@@ -11,10 +11,37 @@ public class ContactsLinkedList {
 		current=null;
 	}
 	
+	public boolean empty () {
+            return head == null; 
+        }
+        
+   public boolean last () { 
+            return current.next == null;
+        }
+        
+   public boolean full () {
+            return false;
+        }
+        
+   public void findFirst () {
+            current = head;
+        }
+	
+	public void findNext () {
+            current = current.next;
+        }
+        
+   public Contact retrieve () {
+            return current.data;
+        }
+        
+   public void update (Contact val) {
+            current.data = val;
+        }
+        
 	
 	
-	
-	public void insert(Contact val) {
+   public void insert(Contact val) {
 		Node<Contact> tmp = new Node<Contact>(val);
 
 		//TODO choose between these two ways
@@ -66,9 +93,8 @@ public class ContactsLinkedList {
 
 	}//end insert method
 	
-	
-	
-public  ContactsLinkedList search( int criteria , String val) {
+		
+   public ContactsLinkedList search( int criteria , String val) {
 		
 		if(empty())
 			return null;
@@ -115,4 +141,4 @@ public  ContactsLinkedList search( int criteria , String val) {
 		return resultList;
 	}//end 
 	
-}
+} // end class
