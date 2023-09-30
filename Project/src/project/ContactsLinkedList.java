@@ -139,6 +139,24 @@ public class ContactsLinkedList {
 
 
 		return resultList;
-	}//end 
+	}//end
+   
+   public void remove () {
+            if (current == head) {
+                head = head.next; 
+            }
+            else {
+                Node<Contact> tmp = head;
+                while (tmp.next != current)
+                    tmp = tmp.next;
+                
+                tmp.next = current.next;
+            }
+            
+            if (current.next == null)
+                current = head;
+            else 
+                current = current.next; 
+        } // end 
 	
 } // end class
