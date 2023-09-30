@@ -350,7 +350,7 @@ public class Phonebook {
 
 			contacts.findFirst();
 
-			while(!contacts.last() ) {
+			while(true ) {
 
 				String contactFirstName = contacts.retrieve().getName();
 				int spaceIndex=contactFirstName.indexOf(" ");
@@ -359,26 +359,20 @@ public class Phonebook {
 					contactFirstName= contactFirstName.substring(0,spaceIndex);
 
 				if(contactFirstName.equalsIgnoreCase(searchedFirstName)) {
+					System.out.println();
 					System.out.println(contacts.retrieve());
 					counter++;
 				}//end if
-
-				contacts.findNext();
+				
+				if(!contacts.last())
+					contacts.findNext();
+				else
+					break;
 
 			}//end while
 
-			System.out.println();
-			String contactFirstName = contacts.retrieve().getName();
-			int spaceIndex=contactFirstName.indexOf(" ");
-
-			if(spaceIndex!=-1)
-				contactFirstName= contactFirstName.substring(0,spaceIndex);
-
-
-			if(contactFirstName.equalsIgnoreCase(searchedFirstName)) {
-				System.out.println(contacts.retrieve());
-				counter++;
-			}//end if
+			
+			
 
 		}//end if
 		if(counter==0)
