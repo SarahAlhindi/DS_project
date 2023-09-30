@@ -1,12 +1,12 @@
 package project;
 
-public class ContactsLinkedList {
+public class LinkedList<T> {
 
-	private Node<Contact> head;
-	private Node<Contact> current;
+	private Node<T> head;
+	private Node<T> current;
 	
 	
-	public ContactsLinkedList() {
+	public LinkedList() {
 		head=null;
 		current=null;
 	}
@@ -31,24 +31,24 @@ public class ContactsLinkedList {
             current = current.next;
         }
         
-   public Contact retrieve () {
+   public T retrieve () {
             return current.data;
         }
         
-   public void update (Contact val) {
+   public void update (T val) {
             current.data = val;
         }
         
 	
 	
-   public void insert(Contact contact) {
-	   Node<Contact> tmp;
+   public void insert(T val) {
+	   Node<T> tmp;
 		if (empty()) {
-		current = head = new Node<Contact> (contact);
+		current = head = new Node<T> (val);
 		}
 		else {
 		tmp = current.next;
-		current.next = new Node<Contact> (contact);
+		current.next = new Node<T> (val);
 		current = current.next;
 		current.next = tmp;
 		}
@@ -64,7 +64,7 @@ public class ContactsLinkedList {
                 head = head.next; 
             }
             else {
-                Node<Contact> tmp = head;
+                Node<T> tmp = head;
                 while (tmp.next != current)
                     tmp = tmp.next;
                 
