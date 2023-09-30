@@ -214,7 +214,7 @@ public static void searchContact() {
 		}//end try
 		catch(Exception e) {
 			input.nextLine();
-			System.out.println("\nerror in input. Please try again\n\n");
+			System.out.println("\nerror in input. Please try again\n");
 		}//end catch
 		
 	}//end do
