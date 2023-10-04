@@ -5,6 +5,7 @@ import java.util.*;
 public class Phonebook {
 	public static Scanner input = new Scanner(System.in);
 	public static LinkedList<Contact> contacts = new LinkedList<Contact>();
+	public static LinkedList<Event> contacts = new LinkedList<Event>();
 
 
 	public static void main(String[] args) {
