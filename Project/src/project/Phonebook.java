@@ -317,14 +317,42 @@ public class Phonebook {
 		System.out.print("Enter Contact name:");
 		String contactName=input.nextLine();
 
+		Contact contact;
+		while (!contacts.last())
+			if(contacts.retrieve().getName().equals(contactName)){
+				contact=contacts.retrieve();
+				break;}
+		        else
+				contacts.getNext();
+
 		System.out.print("Enter event date and time (MM/DD/YYYY HH:MM):");
 		String eventDateTime=input.nextLine();
 
 		System.out.print("Enter event location:");
 		String eventLocation=input.nextLine();
 
+		if(contact!==null){
+		        Event event = new Event(eventTitle, contactName, eventDateTime,eventLocation, contact);
+			events.findFirst();
+			while(!events.last())
+				if(events.retrieve().getContacts().getName().equals(contact.getName()) && events.retrieve().getTime().equals(event.getTime())){
+					System.out.println("Can't add event, there is a conflict");
+					return;}
+				
+			        else
+					events.findNext();
+			events.insert(event);
+		
+			
 
-		Event event = new Event(eventTitle, contactName, eventDateTime,eventLocation, new Contact());
+
+
+
+			
+		}// end if
+		else
+			System.out.println("Invalid contact name");
+		
 
 
 	}//end ScheduleEvent method
