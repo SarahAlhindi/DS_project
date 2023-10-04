@@ -340,14 +340,36 @@ public class Phonebook {
 
 		if (choice=1)
 		{ 
+			System.out.println("Enter contact's name:");
+			String ConName=input.nextLine();
 			events.findFirst();
 			while(!events.last())
-				if(events.retrieve().get)
-			
+				if(events.retrieve().getContacts().getName().equals(ConName)){
+					System.out.println(events.toString()); //toString returns current info
+					break;
+				}
+			else
+					events.findNext();
 				
 		}
-
+			else
+		{
+		System.out.println("Enter the event title");
+			String EvTitle=input.nextLine();
+			events.findFirst();
+			while(!events.last())
+				if(events.retrieve().getTitle().equals(EvTitle)){
+					System.out.println(events.toString()); //toString returns current info
+					break;
+				}
+			else
+					events.findNext();
+				
 		}
+		}
+			
+
+		
 		else
 			System.out.println("No scheduled events");
 			
