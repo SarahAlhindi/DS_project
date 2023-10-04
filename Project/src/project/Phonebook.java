@@ -5,7 +5,7 @@ import java.util.*;
 public class Phonebook {
 	public static Scanner input = new Scanner(System.in);
 	public static LinkedList<Contact> contacts = new LinkedList<Contact>();
-	public static LinkedList<Event> contacts = new LinkedList<Event>();
+	public static LinkedList<Event> events = new LinkedList<Event>();
 
 
 	public static void main(String[] args) {
@@ -317,12 +317,14 @@ public class Phonebook {
 	}//end ScheduleEvent method
 
 	public static void printEventDetails() {
+		if(!events.empty()){
+		
 		int choice=-1;
 		do {
 			try {
 				System.out.println("Enter search criteria:\r\n"
 						+ "1. contact name\r\n"
-						+ "2. Event tittle\r\n");
+						+ "2. Event title\r\n");
 				choice=input.nextInt();
 
 				if(choice!=2 && choice!=1)
@@ -336,7 +338,19 @@ public class Phonebook {
 		}//end do
 		while(true);
 
-		//TODO the rest here
+		if (choice=1)
+		{ 
+			events.findFirst();
+			while(!events.last())
+				if(events.retrieve().get)
+			
+				
+		}
+
+		}
+		else
+			System.out.println("No scheduled events");
+			
 
 	}//end printEventDetails method
 
