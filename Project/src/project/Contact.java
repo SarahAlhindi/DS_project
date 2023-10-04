@@ -93,6 +93,13 @@ public class Contact implements Comparable<Contact>  {
     public String getNotes() {
         return notes;
     }
+    
+    @Override
+    public String toString() {
+        return  "name:" + name + "/n phone_number:" + phone_number +
+                "/n email:" + email + "/n address:" + address + "/n birthday:" 
+                + birthday + "/n notes:" + notes ;
+    }
 
       
 } // end class
