@@ -34,7 +34,47 @@ public class Event {
       contacts.insert(contact);
     }
     
-    
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public LocalDate getDate() {
+        return date;
+    }
+
+    public void setDate(LocalDate date) {
+        this.date = date;
+    }
+
+    public LocalTime getTime() {
+        return time;
+    }
+
+    public void setTime(LocalTime time) {
+        this.time = time;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public LinkedList<Contact> getContacts() {   
+            
+        return contacts;
+    }
+
+    public void setContacts(LinkedList<Contact> contacts) {
+        this.contacts = contacts;
+    }
     
     
    
