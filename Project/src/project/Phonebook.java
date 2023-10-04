@@ -341,10 +341,10 @@ public class Phonebook {
 		if (choice=1)
 		{ 
 			System.out.println("Enter contact's name:");
-			String ConName=input.nextLine();
+			String ContactName=input.nextLine();
 			events.findFirst();
 			while(!events.last())
-				if(events.retrieve().getContacts().getName().equals(ConName)){
+				if(events.retrieve().getContacts().getName().equals(ContactName)){
 					System.out.println(events.toString()); //toString returns current info
 					break;
 				}
@@ -355,10 +355,10 @@ public class Phonebook {
 			else
 		{
 		System.out.println("Enter the event title");
-			String EvTitle=input.nextLine();
+			String EventTitle=input.nextLine();
 			events.findFirst();
 			while(!events.last())
-				if(events.retrieve().getTitle().equals(EvTitle)){
+				if(events.retrieve().getTitle().equals(EventTitle)){
 					System.out.println(events.toString()); //toString returns current info
 					break;
 				}
