@@ -292,7 +292,11 @@ public class Phonebook {
 	public static void deleteContact() {
 		System.out.print("Enter the name of the contact:");
 		String contactName=input.next();
-		//TODO add remove method 
+		events.findFirst();
+		while (!events.empty()){
+			if(events.retrieve().getContacts.
+			
+		}//end while
 	}//end deleteContact method
 
 	public static void ScheduleEvent() {
