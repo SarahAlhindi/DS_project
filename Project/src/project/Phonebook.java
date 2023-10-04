@@ -293,10 +293,20 @@ public class Phonebook {
 		System.out.print("Enter the name of the contact:");
 		String contactName=input.next();
 		events.findFirst();
-		while (!events.empty()){
-			if(events.retrieve().getContacts.
+		while (!events.last()){
+			if(events.retrieve().getContacts().getName().equals(contactName))
+				events.remove();
+			events.findNext();
+
 			
 		}//end while
+		contacts.findFirst();
+		while(!contacts.last())
+			if(contacts.retrieve().getName())
+				contacts.remove();
+		        else
+				contacts.findNext();
+			
 	}//end deleteContact method
 
 	public static void ScheduleEvent() {
@@ -314,8 +324,7 @@ public class Phonebook {
 		String eventLocation=input.nextLine();
 
 
-
-		//		Events event = new Events(eventTitle, contactName, eventDateTime,eventLocation);
+		Event event = new Event(eventTitle, contactName, eventDateTime,eventLocation, new Contact());
 
 
 	}//end ScheduleEvent method
@@ -342,31 +351,30 @@ public class Phonebook {
 		}//end do
 		while(true);
 
-		if (choice=1)
+		if (choice==1)
 		{ 
 			System.out.println("Enter contact's name:");
 			String ContactName=input.nextLine();
 			events.findFirst();
 			while(!events.last())
-				if(events.retrieve().getContacts().getName().equals(ContactName)){
+				if(events.retrieve().getContacts().getName().equals(ContactName))
 					System.out.println(events.toString()); //toString returns current info
-					break;
-				}
-			else
+					
+				
+			        else
 					events.findNext();
 				
 		}
 			else
 		{
-		System.out.println("Enter the event title");
+		System.out.println("Enter the event's title");
 			String EventTitle=input.nextLine();
 			events.findFirst();
 			while(!events.last())
-				if(events.retrieve().getTitle().equals(EventTitle)){
+				if(events.retrieve().getTitle().equals(EventTitle))
 					System.out.println(events.toString()); //toString returns current info
-					break;
-				}
-			else
+				
+			        else
 					events.findNext();
 				
 		}
