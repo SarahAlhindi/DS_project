@@ -77,6 +77,11 @@ public class Event {
     }
     
     
+    @Override
+    public String toString() {
+        return "title:" + title + "\n contact name:" + contacts + "\n date:" + date + 
+                "\n time:" + time + "\n location:" + location ;
+    }
    
     
     

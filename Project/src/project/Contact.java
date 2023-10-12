@@ -64,9 +64,11 @@ public class Contact implements Comparable<Contact>  {
         this.notes = notes;
     }
     
+        
     public String getName() {
         return name;
     }
+    
 
     public String getPhone_number() {
         return phone_number;
@@ -95,6 +97,7 @@ public class Contact implements Comparable<Contact>  {
     public String getNotes() {
         return notes;
     }
+    
     
     @Override
     public String toString() {
