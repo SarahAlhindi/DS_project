@@ -1,9 +1,6 @@
 package project2;
 
-/**
- *
- * @author shaha
- */
+
 public class Contact implements Comparable<Contact>  {
     
     private String name;
@@ -101,7 +98,7 @@ public class Contact implements Comparable<Contact>  {
     
     @Override
     public String toString() {
-        return  "name:" + name + "\nphone_number:" + phone_number +
+        return  "name:" + name + "\nphone number:" + phone_number +
                 "\nemail:" + email + "\naddress:" + address + "\nbirthday:" 
                 + birthday + "\nnotes:" + notes +"\n\n";
     }

@@ -148,11 +148,10 @@ public class LinkedList<T extends Comparable<T>> {
 				}
 			
 			
-			if(!last()) 
+			 
 			findNext();
 		
-		else 
-			break;
+		
 			
 		}//end while
 		

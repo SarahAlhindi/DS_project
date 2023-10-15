@@ -185,7 +185,7 @@ public class Phonebook {
 			resultList.findFirst();
 
 			while(!resultList.last()) {
-				System.out.println(resultList.retrieve());
+				System.out.println(resultList.retrieve()+"\n\n");
 				resultList.findNext();
 			}//end while
 			
