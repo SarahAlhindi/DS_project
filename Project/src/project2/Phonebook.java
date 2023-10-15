@@ -472,13 +472,16 @@ public class Phonebook {
 			while(true ) {
 
 				String name = contacts.retrieve().getName();
-				
+//				int spaceIndex=name.indexOf(" ");
 				
 				
 				
 				String nameParts[] = name.split(" ");
 				
 				String contactFirstName = nameParts[0];
+
+//				if(spaceIndex!=-1)
+//					contactFirstName= contactFirstName.substring(0,spaceIndex);
 
 				if(contactFirstName.equalsIgnoreCase(searchedFirstName)) {
 					System.out.println(contacts.retrieve());
