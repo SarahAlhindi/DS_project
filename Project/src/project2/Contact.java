@@ -98,9 +98,9 @@ public class Contact implements Comparable<Contact>  {
     
     @Override
     public String toString() {
-        return  "name:" + name + "\nphone number:" + phone_number +
-                "\nemail:" + email + "\naddress:" + address + "\nbirthday:" 
-                + birthday + "\nnotes:" + notes +"\n\n";
+        return  "name:" + name + "\n phone number:" + phone_number +
+                "\n email:" + email + "\n address:" + address + "\n birthday:" 
+                + birthday + "\n notes:" + notes +"\n\n";
     }
 
       
