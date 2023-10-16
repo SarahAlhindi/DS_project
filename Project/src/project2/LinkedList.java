@@ -13,8 +13,8 @@ public class LinkedList<T extends Comparable<T>> {
 	
 	
 	public LinkedList() {
-		head=null;
-		current=null;
+		head = null;
+		current = null;
 	}
 	
 	public boolean empty () {
@@ -49,21 +49,13 @@ public class LinkedList<T extends Comparable<T>> {
 	
    public boolean insert(T val) {
 		
-
-		
-		
-		
-		
-		
-		
 		Node<T> tmp = new Node<T>(val);
 
 		
-		
-
-		if(empty() || val.compareTo(head.data)<=0 ) {
-			tmp.next=head;
-			head=tmp;
+		if (empty() || val.compareTo(head.data)<=0 ) {
+			tmp.next = head;
+			head = tmp;
+         
 		}//end if
 
 		else {
@@ -76,12 +68,13 @@ public class LinkedList<T extends Comparable<T>> {
 				q = p;
 				p = p.next;
 			}
+         
 			tmp.next = p;
 			q.next = tmp;
 
-
 		}//else
-		current=tmp;
+      
+		current = tmp;
 
 		
 		return true;
@@ -96,6 +89,7 @@ public class LinkedList<T extends Comparable<T>> {
             if (current == head) {
                 head = head.next; 
             }
+            
             else {
                 Node<T> tmp = head;
                 while (tmp.next != current)
@@ -115,16 +109,14 @@ public class LinkedList<T extends Comparable<T>> {
    public LinkedList<T> search( String criteria , Object val) {
 		
 		
-		if(empty())
+		if (empty())
 			return null;
 
 
-		LinkedList<T> resultList=new LinkedList<T>();
+		LinkedList<T> resultList = new LinkedList<T>();
 
 		findFirst();
 		while(current!=null) {
-			
-			
 			
 			Field attribute = null;
 			try {
@@ -133,7 +125,6 @@ public class LinkedList<T extends Comparable<T>> {
 				if(attribute.get(current.data).equals(val))
 				resultList.insert(current.data);
 				
-			
 				
 			} catch (NoSuchFieldException e) {
 				// TODO Auto-generated catch block
@@ -158,7 +149,7 @@ public class LinkedList<T extends Comparable<T>> {
 		return resultList;
 		
 		
-	}//search2
+	}//search
 
 	
 } // end class

@@ -41,24 +41,31 @@ public class Main {
 				}//end try
 				catch(Exception e) {
 					input.nextLine();
-					System.out.println("\nerror in input. Please try again\n\n");
+					System.out.println("\n error in input. Please try again\n\n");
 				}
 				System.out.println();
 				switch(choice) {
 				case 1 :
-					phonebook.addContact(); break;
+					phonebook.addContact(); 
+               break;
 				case 2: 
-					phonebook.searchContact(); break;
+					phonebook.searchContact(); 
+               break;
 				case 3 : 
-					phonebook.deleteContact(); break;
+					phonebook.deleteContact(); 
+               break;
 				case 4: 
-					phonebook.ScheduleEvent(); break;
+					phonebook.ScheduleEvent(); 
+               break;
 				case 5: 
-					phonebook.printEventDetails(); break;
+					phonebook.printEventDetails(); 
+               break;
 				case 6: 
-					phonebook.PrintContactsByFirstName(); break;
+					phonebook.PrintContactsByFirstName(); 
+               break;
 				case 7: 
-					phonebook.PrintEventsAlphabetically(); break;
+					phonebook.PrintEventsAlphabetically(); 
+               break;
 				case 8 :
 					System.out.println("Goodbye!");
 

@@ -22,9 +22,6 @@ public class Phonebook {
 	}
 	
 	
-	
-
-
 
 
 	public void addContact() {
@@ -107,7 +104,7 @@ public class Phonebook {
 		String value=null;
 		do {
 			try {
-				System.out.println("\nEnter search criteria:\r\n"
+				System.out.println("\n Enter search criteria:\r\n"
 						+ "1. Name\r\n"
 						+ "2. Phone Number\r\n"
 						+ "3. Email Address\r\n"
@@ -124,24 +121,30 @@ public class Phonebook {
 				
 				switch(choice) {
 				case 1: 
-					System.out.print("Enter the contact's name:");break;
+					System.out.print("Enter the contact's name:");
+               break;
 				case 2: 
-					System.out.print("Enter the contact's phone number:");break;
+					System.out.print("Enter the contact's phone number:");
+               break;
 				case 3: 
-					System.out.print("Enter the contact's Email Address:");break;
+					System.out.print("Enter the contact's Email Address:");
+               break;
 				case 4: 
-					System.out.print("Enter the contact's Address:");break;
+					System.out.print("Enter the contact's Address:");
+               break;
 				case 5: 
-					System.out.print("Enter the contact's Birthday:");break;
+					System.out.print("Enter the contact's Birthday:");
+               break;
 
 				}//end switch
+            
 				value = input.nextLine();
 				break;
 
 			}//end try
 			catch(Exception e) {
 				input.nextLine();
-				System.out.println("\nerror in input. Please try again\n\n");
+				System.out.println("\n error in input. Please try again \n\n");
 			}//end catch
 			
 		}//end do
@@ -341,6 +344,7 @@ public class Phonebook {
 
 			
 		}// end if contact !=null
+      
 		else
 			System.out.println("Invalid contact name");
 		
@@ -366,7 +370,7 @@ public class Phonebook {
 			}//end try
 			catch(Exception e) {
 				input.nextLine();
-				System.out.println("\nerror in input. Please try again\n\n");
+				System.out.println("\n error in input. Please try again\n\n");
 			}//end catch
 		}//end do
 		while(true);
@@ -411,7 +415,7 @@ public class Phonebook {
 			else
 		{
 		System.out.println("Enter the event's title");
-			String EventTitle=input.nextLine();
+			String EventTitle = input.nextLine();
 			input.nextLine();
 			
 			
