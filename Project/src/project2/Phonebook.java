@@ -156,7 +156,7 @@ public class Phonebook {
 		
 		System.out.println();
 		
-		String criteria=null;;
+		String criteria=null;
 		switch(choice) {
 		case 1:
 			criteria="name";break;
