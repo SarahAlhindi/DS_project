@@ -324,21 +324,24 @@ boolean found=false;
 		if(contact!=null){
 		        Event event = new Event(eventTitle , eventDate, eventTime,eventLocation, contact);
 		        
-		        
+		        Event currentEvent;
 		        
 		        if(!events.empty()) {
 			events.findFirst();
-			while(!events.last())
-				if(events.retrieve().getContact().getName().equalsIgnoreCase(contact.getName()) && events.retrieve().getTime().equals(event.getTime()) && events.retrieve().getDate().equals(event.getDate())){
+			while(!events.last()) {
+				currentEvent=events.retrieve();
+				if(currentEvent.getContact().getName().equalsIgnoreCase(contactName) && currentEvent.getTime().equals(event.getTime()) && currentEvent.getDate().equals(event.getDate())){
 					System.out.println("Can't add event, there is a conflict");
 					return;}
 				
 			        else
 					events.findNext();
+				
+			}//end while
 			
 			
-			
-			if(events.retrieve().getContact().getName().equalsIgnoreCase(contact.getName()) && events.retrieve().getTime().equals(event.getTime()) && events.retrieve().getDate().equals(event.getDate())){
+			currentEvent=events.retrieve();
+			if(currentEvent.getContact().getName().equalsIgnoreCase(contactName) && currentEvent.getTime().equals(event.getTime()) && currentEvent.getDate().equals(event.getDate())){
 				System.out.println("Can't add event, there is a conflict");
 				return;}
 			
