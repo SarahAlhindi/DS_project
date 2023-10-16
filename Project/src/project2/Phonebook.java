@@ -292,20 +292,21 @@ public class Phonebook {
 		String contactName=input.nextLine();
 
 	
-
+boolean found=false;
 		Contact contact=null;
 		contacts.findFirst();
 		if(!contacts.empty()) {
 		while (!contacts.last())
 			if(contacts.retrieve().getName().equals(contactName)){
 				contact=contacts.retrieve();
+				found=true;
 				break;
 				}
 		        else
 				contacts.findNext();
 		
 		
-		if(contacts.retrieve().getName().equalsIgnoreCase(contactName))
+		if(!found && contacts.retrieve().getName().equalsIgnoreCase(contactName))
 			contact=contacts.retrieve();
 		
 		}//end if not empty
