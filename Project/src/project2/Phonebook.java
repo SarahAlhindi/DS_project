@@ -254,7 +254,15 @@ public class Phonebook {
 		while (true){
 			eventRemoved=false;
 			if(events.retrieve().getContact().getName().equalsIgnoreCase(contactName)) {
+				
+				if(events.last()) {
 				events.remove();
+				break;
+				}//end if
+				else
+					events.remove();
+				
+				
 				eventRemoved=true;
 				}
 			
@@ -262,6 +270,7 @@ public class Phonebook {
 			if(events.empty() || (events.last() && !eventRemoved)) // !eventRemoved is for the case when the last element is reached because the previous event was deleted
 				
 				break;
+			
 			else if(!eventRemoved)
 				events.findNext();
 			
