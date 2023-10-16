@@ -228,7 +228,7 @@ public class Phonebook {
 		        else
 				contacts.findNext();
 		
-		if(contacts.retrieve().getName().equalsIgnoreCase(contactName)) {
+		if(!found || contacts.retrieve().getName().equalsIgnoreCase(contactName)) {
 			contacts.remove();
 			System.out.println("Contact deleted successfully");
 			found=true;
@@ -461,6 +461,7 @@ public class Phonebook {
 	public void PrintContactsByFirstName() {
 		System.out.print("Enter the first name:");
 		String searchedFirstName= input.next();
+		System.out.println();
 		input.nextLine();
 
 		//to count number of contact with this first name
