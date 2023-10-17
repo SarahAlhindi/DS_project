@@ -376,6 +376,7 @@ boolean found=false;
 						+ "2. Event title\r\n");
 				System.out.print("Enter your choice:");
 				choice=input.nextInt();
+				
 
 				if(choice!=2 && choice!=1)
 					throw new Exception();
@@ -392,9 +393,10 @@ boolean found=false;
 		input.nextLine();
 		if (choice==1)
 		{ 
+			
 			System.out.println("Enter contact's name:");
 			String ContactName=input.nextLine();
-			input.nextLine();
+			
 			
 			
 			if(contacts.empty()) {
@@ -429,44 +431,34 @@ boolean found=false;
 		{
 		System.out.println("Enter the event's title");
 			String EventTitle = input.nextLine();
-			input.nextLine();
 			
 			
-			int numOfMatchingEvents=0;
-			events.findFirst();
-			while(!events.last()) {
-				if(events.retrieve().getTitle().equals(EventTitle)) {
-					System.out.println(events.toString()); 
-					numOfMatchingEvents++;
-				}//toString returns current info
-				
-					events.findNext();
-					
-					}//end while
-			
-			
-			if(events.retrieve().getTitle().equals(EventTitle)) {
-				System.out.println(events.toString()); 
-				numOfMatchingEvents++;
-			}//toString returns current info
+			LinkedList<Event> resultList= events.search("title", EventTitle);
 			
 			
 			
+			 
+			if(resultList==null || resultList.empty()) {
+				System.out.println("No Events found");
+				return;
+			}//end if
 			
-			if(numOfMatchingEvents==0)
-				System.out.println("No such event");
-			
-			
-				
-		}
-		}
-			
+			else {
+				resultList.findFirst();
 
-		
+				while(!resultList.last()) {
+					System.out.println(resultList.retrieve()+"\n\n");
+					resultList.findNext();
+				}//end while
+				
+				System.out.println(resultList.retrieve()); 
+			}//end else
+			
+		}
+		}// END EVENT NOT EMPTY
 		else
 			System.out.println("No scheduled events");
-			
-
+		
 	}//end printEventDetails method
 	
 	
@@ -555,3 +547,5 @@ boolean found=false;
 
 
 }//end class phonebook
+
+
