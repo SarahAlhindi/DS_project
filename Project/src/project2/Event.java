@@ -1,26 +1,21 @@
 
 package project2;
 
-import java.time.*;
-
-
 
 
 public class Event implements Comparable<Event>{
     public String title;
     public String date;
     public String time;
-    // or use (StringTime) data type to merge the time and date variables
-    //or use "Date" data type from util package
     public String location;
-    Contact contact;
+    public Contact contact;
     
     
-    
+//constructors
     public Event(){
         title="";
-        date=null;
-        time=null;
+        date="";
+        time="";
         location="";
         contact=null;;
         
@@ -38,6 +33,7 @@ public class Event implements Comparable<Event>{
     }
     
 
+//setters and getters
     public String getTitle() {
         return title;
     }
@@ -70,8 +66,6 @@ public class Event implements Comparable<Event>{
         this.location = location;
     }
     
-
-    
     
     
     public Contact getContact() {
@@ -80,6 +74,8 @@ public class Event implements Comparable<Event>{
 	public void setContact(Contact contact) {
 		this.contact = contact;
 	}
+   
+   
 	@Override
     public String toString() {
         return "title:" + title + "\n contact name:" + contact.getName() + "\n date:" + date + 
@@ -97,4 +93,4 @@ public class Event implements Comparable<Event>{
     
     
     
-}
+}// end Event class

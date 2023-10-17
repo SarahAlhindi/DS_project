@@ -2,10 +2,6 @@ package project2;
 import java.util.*;
 
 
-
-
-
-
 public class Phonebook {
 	
 	public static Scanner input = new Scanner(System.in);
@@ -15,7 +11,7 @@ public class Phonebook {
 	
 	
 
-
+//constructor
 	public Phonebook(LinkedList<Contact> contacts, LinkedList<Event> events) {
 		this.contacts = contacts;
 		this.events = events;
@@ -25,7 +21,8 @@ public class Phonebook {
 
 
 	public void addContact() {
-		
+   
+//get contact info
 		System.out.println("Enter the contact's name:");
 		String contactName=input.nextLine();
 
@@ -46,12 +43,12 @@ public class Phonebook {
 
 
 
-
+//create contact object
 		Contact contact = new Contact(contactName, contactPhone, contactEmail, contactAddress, contactDob, contactNotes);
 
 
 		
-		//if contact list is empty, insert directly//
+//if contact list is empty, insert directly//
 		
 		if(contacts.empty()) {
 			if(contacts.insert(contact))
@@ -61,15 +58,15 @@ public class Phonebook {
 				
 		}//end if
 		
-		/////////////////////////////////////////////
+/////////////////////////////////////////////
 		
 		
 		
-		//Check if contact exists///////////////////
+//Check if contact exists
 
 		contacts.findFirst();
 		while(true) {
-			if((contact.getName()).equalsIgnoreCase(contacts.retrieve().getName()) || (contact.getPhone_number()).equalsIgnoreCase(contacts.retrieve().getPhone_number()) ) {
+			if((contact.getName()).equalsIgnoreCase(contacts.retrieve().getName()) || (contact.getPhone_number()).equals(contacts.retrieve().getPhone_number()) ) {
 				System.out.println("Contact already exists!");
 				return;
 			}//if
@@ -84,7 +81,7 @@ public class Phonebook {
 
 		}//end while
 		
-		////////////////////////////////////////////////
+////////////////////////////////////////////////
 		
 		
 		
@@ -98,6 +95,7 @@ public class Phonebook {
 
 
 }//end addContact
+
 
 	public void searchContact()   {
 		int choice=-1;
@@ -151,12 +149,10 @@ public class Phonebook {
 		while(true);
 		
 		
-		
-		
-		
 		System.out.println();
 		
 		String criteria=null;
+      
 		switch(choice) {
 		case 1:
 			criteria="name";break;
@@ -172,8 +168,9 @@ public class Phonebook {
 			
 			
 		}//switch
-		
-		
+	
+ 
+//search for contact
 		LinkedList<Contact> resultList= contacts.search(criteria, value);
 		
 		
@@ -196,13 +193,9 @@ public class Phonebook {
 		}//end else
 		
 		
-		
-		
-
-
-
-
 	}//end searchcontact method
+   
+   
 	public void deleteContact() {
 		
 		System.out.print("Enter the name of the contact:");
@@ -216,7 +209,8 @@ public class Phonebook {
 		
 		
 		boolean found=false;
-		
+
+//find and delete the specified contact
 		contacts.findFirst();
 		while(!contacts.last())
 			if(contacts.retrieve().getName().equalsIgnoreCase(contactName)) {
@@ -235,18 +229,18 @@ public class Phonebook {
 			}
 		
 		
-		
+// if the specified contact doesn't exist
 		if(!found) {
 			System.out.println("No contact with such name");
 			return;
 			}
 		
 		
-		
+// deleting events related to the contact deleted		
 		if(events.empty())
 			return;
 		
-		
+
 		boolean eventRemoved=false;
 		
 		
@@ -297,7 +291,7 @@ boolean found=false;
 		contacts.findFirst();
 		if(!contacts.empty()) {
 		while (!contacts.last())
-			if(contacts.retrieve().getName().equals(contactName)){
+			if(contacts.retrieve().getName().equalsIgnoreCase(contactName)){
 				contact=contacts.retrieve();
 				found=true;
 				break;
@@ -305,7 +299,7 @@ boolean found=false;
 		        else
 				contacts.findNext();
 		
-		
+//checking the last contact in list	
 		if(!found && contacts.retrieve().getName().equalsIgnoreCase(contactName))
 			contact=contacts.retrieve();
 		
@@ -358,12 +352,15 @@ boolean found=false;
 			
 		}// end if contact !=null
       
+
+//if specified contact doesn't exist     
 		else
 			System.out.println("Invalid contact name");
 		
 
 
 	}//end ScheduleEvent method
+
 
 	public void printEventDetails() {
 		if(!events.empty()){
@@ -409,15 +406,15 @@ boolean found=false;
 			events.findFirst();
 			while(!events.last()) {
 				if(events.retrieve().getContact().getName().equalsIgnoreCase(ContactName)) {
-					System.out.println(events.retrieve().toString()); //toString returns current info
+					System.out.println(events.retrieve().toString()); //return current info
 					numOfMatchingEvents++;
 					}
 					events.findNext();
 				}//while
 			
-			
+//check the last event	
 			if(events.retrieve().getContact().getName().equalsIgnoreCase(ContactName)) {
-				System.out.println(events.retrieve().toString()); //toString returns current info
+				System.out.println(events.retrieve().toString()); //return current info
 				numOfMatchingEvents++;
 				}
 				
@@ -433,7 +430,9 @@ boolean found=false;
 			String EventTitle = input.nextLine();
 			
 			
+
 			LinkedList<Event> resultList= events.search("title", EventTitle);
+
 			
 			
 			
@@ -472,26 +471,19 @@ boolean found=false;
 		//to count number of contact with this first name
 		int counter=0;
 		
-		
-
 		if(!contacts.empty() ) {
-
 
 			contacts.findFirst();
 
-			while(true ) {
+			while(true) {
 
 				String name = contacts.retrieve().getName();
-//				int spaceIndex=name.indexOf(" ");
-				
-				
+						
 				
 				String nameParts[] = name.split(" ");
 				
 				String contactFirstName = nameParts[0];
 
-//				if(spaceIndex!=-1)
-//					contactFirstName= contactFirstName.substring(0,spaceIndex);
 
 				if(contactFirstName.equalsIgnoreCase(searchedFirstName)) {
 					System.out.println(contacts.retrieve());
@@ -517,6 +509,7 @@ boolean found=false;
 			System.out.println("No contact with such first name");
 
 	}//end PrintContactsByFirstName method
+   
 
 	public void PrintEventsAlphabetically() {
 

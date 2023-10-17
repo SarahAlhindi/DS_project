@@ -6,7 +6,8 @@ public class Node<T> {
    
 	public T data;
 	public Node<T> next;
-
+   
+//constructors
 	public Node () {
 		data = null;
 		next = null;
@@ -17,6 +18,7 @@ public class Node<T> {
 		next = null;
 	}
 
+//setters and getters
 	public void setData(T data){
             this.data=data;
         }
