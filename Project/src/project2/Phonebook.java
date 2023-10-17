@@ -18,7 +18,9 @@ public class Phonebook {
 	}
 	
 	
-
+/**
+ * This method adds a contact to the contacts LinkedList.
+ * */
 
 	public void addContact() {
    
@@ -26,13 +28,13 @@ public class Phonebook {
 		System.out.println("Enter the contact's name (FirstName LastName):");
 		String contactName=input.nextLine();
 
-		System.out.println("Enter the contact's phone number:");
+		System.out.println("Enter the contact's phone number (05xxxxxxxx):");
 		String contactPhone=input.nextLine();
 
-		System.out.println("Enter the contact's email address:");
+		System.out.println("Enter the contact's email address(e.g. example@example.com):");
 		String contactEmail=input.nextLine();
 
-		System.out.println("Enter the contact's address:");
+		System.out.println("Enter the contact's address :");
 		String contactAddress=input.nextLine();
 
 		System.out.println("Enter the contact's birthday (DD/MM/YYYY):");
@@ -96,7 +98,11 @@ public class Phonebook {
 
 }//end addContact
 
-
+/**
+ * This method searches for contacts based on a criteria.
+ * */
+	
+	
 	public void searchContact()   {
 		int choice=-1;
 		String value=null;
@@ -196,6 +202,10 @@ public class Phonebook {
 	}//end searchcontact method
    
    
+	/**
+	 *This method removes a contact and any associated events if any. 
+	 * */
+	
 	public void deleteContact() {
 		
 		System.out.print("Enter the name of the contact:");
@@ -222,7 +232,7 @@ public class Phonebook {
 		        else
 				contacts.findNext();
 		
-		if(!found || contacts.retrieve().getName().equalsIgnoreCase(contactName)) {
+		if(!found && contacts.retrieve().getName().equalsIgnoreCase(contactName)) {
 			contacts.remove();
 			System.out.println("Contact deleted successfully");
 			found=true;
@@ -276,7 +286,9 @@ public class Phonebook {
 		
 		
 		
-
+/**
+ * This method schedules an event with a contact.
+ * */
 	public void ScheduleEvent() {
 		
 		System.out.print("Enter event title:");
@@ -361,7 +373,10 @@ boolean found=false;
 
 	}//end ScheduleEvent method
 
-
+	/**
+	 * This method searches for events based on a criteria.
+	 * */
+	
 	public void printEventDetails() {
 		if(!events.empty()){
 		
@@ -454,13 +469,16 @@ boolean found=false;
 			}//end else
 			
 		}
-		}// END EVENT NOT EMPTY
+		}// end event not empty
 		else
 			System.out.println("No scheduled events");
 		
 	}//end printEventDetails method
 	
 	
+	/**
+	 * This method prints contacts that share the specified first name.
+	 */
 
 	public void PrintContactsByFirstName() {
 		System.out.print("Enter the first name:");
@@ -510,6 +528,11 @@ boolean found=false;
 
 	}//end PrintContactsByFirstName method
    
+	
+	/**
+	 * This method prints all events alphabetically.
+	 */
+	 
 
 	public void PrintEventsAlphabetically() {
 
