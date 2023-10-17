@@ -23,7 +23,7 @@ public class Phonebook {
 	public void addContact() {
    
 //get contact info
-		System.out.println("Enter the contact's name:");
+		System.out.println("Enter the contact's name (FirstName LastName):");
 		String contactName=input.nextLine();
 
 		System.out.println("Enter the contact's phone number:");
@@ -35,7 +35,7 @@ public class Phonebook {
 		System.out.println("Enter the contact's address:");
 		String contactAddress=input.nextLine();
 
-		System.out.println("Enter the contact's birthday:");
+		System.out.println("Enter the contact's birthday (DD/MM/YYYY):");
 		String contactDob=input.nextLine();
 
 		System.out.println("Enter any notes for the contact:");
@@ -309,7 +309,7 @@ boolean found=false;
 		System.out.print("Enter event date (MM/DD/YYYY):");
 		String eventDate=input.nextLine();
 		
-		System.out.print("Enter eventtime (HH:MM):");
+		System.out.print("Enter event time (HH:MM):");
 		String eventTime=input.nextLine();
 
 		System.out.print("Enter event location:");
