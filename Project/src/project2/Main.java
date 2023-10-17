@@ -3,7 +3,6 @@ package project2;
 import java.util.Scanner;
 
 
-
 public class Main {
 
 	public static Scanner input = new Scanner(System.in);	
@@ -77,4 +76,4 @@ public class Main {
 
 	}
 
-}
+}// end Main class

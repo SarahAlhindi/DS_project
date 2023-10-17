@@ -9,6 +9,9 @@ public class Contact implements Comparable<Contact>  {
     private String address;
     private String birthday;
     private String notes;
+    
+
+//constructors
 
     public Contact() {
         name = "";
@@ -36,7 +39,7 @@ public class Contact implements Comparable<Contact>  {
     }
     
      
-
+//Setters and getters
     public void setName(String name) {
         this.name = name;
     }
@@ -104,4 +107,4 @@ public class Contact implements Comparable<Contact>  {
     }
 
       
-} // end class
+} // end Contact class

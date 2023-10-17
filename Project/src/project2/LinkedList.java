@@ -3,15 +3,13 @@ package project2;
 import java.lang.reflect.Field;
 
 
-
-
-
 public class LinkedList<T extends Comparable<T>> {
 
 	private Node<T> head;
 	private Node<T> current;
 	
 	
+//constructor
 	public LinkedList() {
 		head = null;
 		current = null;
@@ -68,9 +66,9 @@ public class LinkedList<T extends Comparable<T>> {
 				q = p;
 				p = p.next;
 			}
-         
-			tmp.next = p;
+
 			q.next = tmp;
+         tmp.next = p;
 
 		}//else
       
@@ -102,7 +100,7 @@ public class LinkedList<T extends Comparable<T>> {
                 current = head;
             else 
                 current = current.next; 
-        } // end 
+        } // end remove method
    
    
    
@@ -152,4 +150,4 @@ public class LinkedList<T extends Comparable<T>> {
 	}//search
 
 	
-} // end class
+} // end LinkedList class
